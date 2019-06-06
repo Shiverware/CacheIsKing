@@ -159,7 +159,7 @@ class CacheIsKingTests: XCTestCase {
 
 		XCTAssert(cache.count == 4)
 
-		NotificationCenter.default.post(name: NSNotification.Name.UIApplicationDidReceiveMemoryWarning,
+		NotificationCenter.default.post(name: UIApplication.didReceiveMemoryWarningNotification,
 		                                object: UIApplication.shared)
 
 		XCTAssert(cache.count == 0)
@@ -171,7 +171,7 @@ class CacheIsKingTests: XCTestCase {
 
 		XCTAssert(cache.count == 4)
 
-		NotificationCenter.default.post(name: NSNotification.Name.UIApplicationDidEnterBackground,
+		NotificationCenter.default.post(name: UIApplication.didEnterBackgroundNotification,
 		                                object: UIApplication.shared)
 
 		XCTAssert(cache.count == 0)
